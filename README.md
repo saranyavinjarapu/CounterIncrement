@@ -1,10 +1,10 @@
-# Next.js Counter Task
+# React.js Counter Task
 
-Welcome to the Next.js Counter Task! This task involves implementing a counter functionality in a Next.js project. You will need to clone the project, update specific files, and push your code back to your own repository.
+Welcome to the React.js Counter Task! This task involves implementing a counter functionality in a React.js project. You will need to clone the project, update specific files, and push your code back to your own repository.
 
 ## Task Overview
 
-Your task is to implement the following functionality in the existing Next.js project:
+Your task is to implement the following functionality in the existing React.js project:
 
 1. **Increment/Decrement Button Logic**: Implement logic to increase or decrease the count by 1 on button click.
 2. **Custom Amount Addition**: Add an input box where users can enter any amount. Implement functionality so that when the "Add Amount" button is clicked, the count gets increased by the entered amount.
