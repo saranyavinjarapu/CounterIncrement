@@ -67,7 +67,7 @@ Once you have implemented the required functionality:
    git push origin [your-branch-name]
    ```
 
-3. Submit the repo url to your reporting manager.
+3. Submit the repo url to prithvi@smartdino.tech and cc arun@smartdino.tech'
 
 ## Evaluation Criteria
 
