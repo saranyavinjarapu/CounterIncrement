@@ -11,6 +11,12 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     // increment, decreament, incrementByAmount loginc here
+    increment: (state): void => {
+      state.value += 1;
+    },
+    decrement: (state) => {
+      state.value -= 1;
+    },
   },
 });
 
@@ -19,3 +25,6 @@ export interface CounterSliceState {
   value: number;
   status: "idle" | "loading" | "failed";
 }
+
+export const { increment, decrement } = counterSlice.actions;
+export default counterSlice.reducer;
