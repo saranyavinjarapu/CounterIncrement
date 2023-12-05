@@ -1,7 +1,7 @@
 "use client";
 
 /* Core */
-import { useState, useRef } from "react";
+import { useRef } from "react";
 
 /* Instruments */
 import { useSelector, selectCount, useDispatch } from "@/lib/redux";
@@ -17,10 +17,15 @@ export const Counter = () => {
 
   // Create a state named incrementAmount
 
-  function handleChange() {
-    const customInputValue = customInput!.current!.value;
-    dispatch(incrementByAmount(Number(customInputValue)));
-  }
+  const handleCounterIncrement = () => {
+    const customInputValue = Number(customInput!.current!.value);
+    dispatch(incrementByAmount(customInputValue));
+  };
+
+  const handleCounterIncrementOddCount = () => {
+    const customInputValue = Number(customInput!.current!.value);
+    count % 2 === 1 && dispatch(incrementByAmount(customInputValue));
+  };
 
   return (
     <div>
@@ -51,14 +56,12 @@ export const Counter = () => {
           className={styles.textbox}
           aria-label="Set increment amount"
         />
-        <button className={styles.button} onClick={handleChange}>
+        <button className={styles.button} onClick={handleCounterIncrement}>
           Add Amount
         </button>
         <button
           className={styles.button}
-          onClick={() => {
-            // dispatch event to add incrementAmount only if count is odd
-          }}
+          onClick={handleCounterIncrementOddCount}
         >
           Add If Odd
         </button>
