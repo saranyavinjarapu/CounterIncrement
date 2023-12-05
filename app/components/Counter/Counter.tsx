@@ -31,7 +31,7 @@ export const Counter = () => {
     <div>
       <div className={styles.row}>
         <button
-          className={styles.button}
+          className={styles.button + " " + styles.decrement}
           aria-label="Decrement value"
           onClick={() => {
             dispatch(decrement());
@@ -52,15 +52,19 @@ export const Counter = () => {
       </div>
       <div className={styles.row}>
         <input
+          type="number"
           ref={customInput}
           className={styles.textbox}
           aria-label="Set increment amount"
         />
-        <button className={styles.button} onClick={handleCounterIncrement}>
+        <button
+          className={styles.button + " " + styles.amountButton}
+          onClick={handleCounterIncrement}
+        >
           Add Amount
         </button>
         <button
-          className={styles.button}
+          className={styles.button + " " + styles.amountButton}
           onClick={handleCounterIncrementOddCount}
         >
           Add If Odd

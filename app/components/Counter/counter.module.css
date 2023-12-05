@@ -5,44 +5,58 @@
 }
 
 .row > button {
-  margin-left: 4px;
+  margin-left: 8px;
   margin-right: 8px;
 }
 
 .row:not(:last-child) {
-  margin-bottom: 16px;
+  margin-bottom: 46px;
 }
 
 .value {
-  font-size: 78px;
-  padding-left: 16px;
-  padding-right: 16px;
+  font-size: 30px;
+  font-weight: 600;
   margin-top: 2px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
+  display: inline-block;
+  border: 2px solid rgb(105, 103, 103);
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0.3rem 2rem;
+  margin: 2px 20px 2px 20px;
 }
 
 .button {
   appearance: none;
-  background: none;
-  font-size: 32px;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: #008cba;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 25px;
+  border: none;
   outline: none;
-  border: 2px solid transparent;
-  color: rgb(112, 76, 182);
-  padding-bottom: 4px;
   cursor: pointer;
-  background-color: rgba(112, 76, 182, 0.1);
-  border-radius: 2px;
-  transition: all 0.15s;
+  border-radius: 5px;
+}
+
+.amountButton {
+  font-size: 18px;
+}
+
+.decrement {
+  background: #ae67fa;
 }
 
 .textbox {
-  font-size: 32px;
-  padding: 2px;
-  width: 64px;
+  padding: 0.5rem 1rem;
+  margin-right: 28px;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 20px;
   text-align: center;
-  margin-right: 4px;
 }
 
 .button:hover,
@@ -60,7 +74,7 @@
 }
 
 .asyncButton:after {
-  content: '';
+  content: "";
   background-color: rgba(112, 76, 182, 0.15);
   display: block;
   position: absolute;

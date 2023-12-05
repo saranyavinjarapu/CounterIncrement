@@ -1,26 +1,28 @@
 .container {
   display: grid;
   grid-template-areas:
-    'nav'
-    'header'
-    'main'
-    'footer';
-  grid-template-rows: auto auto 1fr 36px;
+    "nav"
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto auto auto 1fr;
   align-items: center;
   min-height: 100vh;
 }
 
 .logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
 .header {
   grid-area: header;
+  padding: 20px;
 }
 
 .main {
   grid-area: main;
+  margin-top: 50px;
 }
 
 .header,
@@ -41,9 +43,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 8px;
-  font-size: calc(10px + 2vmin);
+  gap: 25px;
+  padding: 25px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 25px;
+  text-transform: capitalize;
+  background: linear-gradient(103.22deg, #ae67fa -13.86%, #b8a297 99.55%);
 }
 
 .link:hover {
@@ -51,7 +57,7 @@
 }
 
 .link {
-  color: #704cb6;
+  color: #fff;
 }
 
 .link.active {
