@@ -4,7 +4,12 @@
 import { useState } from "react";
 
 /* Instruments */
-import { useSelector, selectCount, useDispatch } from "@/lib/redux";
+import {
+  useSelector,
+  selectCount,
+  selectCustomInputIncrement,
+  useDispatch,
+} from "@/lib/redux";
 import { increment, decrement } from "@/lib/redux";
 
 import styles from "./counter.module.css";
