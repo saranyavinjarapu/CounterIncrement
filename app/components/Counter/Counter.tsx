@@ -1,16 +1,11 @@
 "use client";
 
 /* Core */
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 /* Instruments */
-import {
-  useSelector,
-  selectCount,
-  selectCustomInputIncrement,
-  useDispatch,
-} from "@/lib/redux";
-import { increment, decrement } from "@/lib/redux";
+import { useSelector, selectCount, useDispatch } from "@/lib/redux";
+import { increment, decrement, incrementByAmount } from "@/lib/redux";
 
 import styles from "./counter.module.css";
 
@@ -18,7 +13,14 @@ export const Counter = () => {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
 
+  const customInput = useRef<HTMLInputElement>(null);
+
   // Create a state named incrementAmount
+
+  function handleChange() {
+    const customInputValue = customInput!.current!.value;
+    dispatch(incrementByAmount(Number(customInputValue)));
+  }
 
   return (
     <div>
@@ -44,13 +46,12 @@ export const Counter = () => {
         </button>
       </div>
       <div className={styles.row}>
-        <input className={styles.textbox} aria-label="Set increment amount" />
-        <button
-          className={styles.button}
-          onClick={() => {
-            // dispatch event to add incrementAmount to count
-          }}
-        >
+        <input
+          ref={customInput}
+          className={styles.textbox}
+          aria-label="Set increment amount"
+        />
+        <button className={styles.button} onClick={handleChange}>
           Add Amount
         </button>
         <button
