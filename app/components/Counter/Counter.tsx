@@ -4,9 +4,13 @@
 import { useRef } from "react";
 
 /* Instruments */
-import { useSelector, selectCount, useDispatch } from "@/lib/redux";
+import {
+  useSelector,
+  selectCount,
+  useDispatch,
+  incrementIfOddAsync,
+} from "@/lib/redux";
 import { increment, decrement, incrementByAmount } from "@/lib/redux";
-
 import styles from "./counter.module.css";
 
 export const Counter = () => {
@@ -15,16 +19,18 @@ export const Counter = () => {
 
   const customInput = useRef<HTMLInputElement>(null);
 
-  // Create a state named incrementAmount
+  //handle Counter Increment by User Input
 
   const handleCounterIncrement = () => {
     const customInputValue = Number(customInput!.current!.value);
     dispatch(incrementByAmount(customInputValue));
   };
 
+  //handle Counter Increment by User Input when Existing counter is an odd value
+
   const handleCounterIncrementOddCount = () => {
     const customInputValue = Number(customInput!.current!.value);
-    count % 2 === 1 && dispatch(incrementByAmount(customInputValue));
+    dispatch(incrementIfOddAsync(customInputValue));
   };
 
   return (
